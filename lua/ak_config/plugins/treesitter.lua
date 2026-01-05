@@ -8,6 +8,7 @@ return {
             "bash",
             "powershell",
             "c",
+            "c_sharp",
             "diff",
             "html",
             "lua",

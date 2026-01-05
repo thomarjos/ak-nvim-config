@@ -109,11 +109,20 @@ return {
                     },
                 },
             },
+            omnisharp = {
+                settings = {
+                    enable_editorconfig_support = true,
+                    enable_import_completion = true,
+                    organize_imports_on_format = true,
+                },
+            },
         }
 
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
             "stylua",
+            "omnisharp",
+            "csharpier",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

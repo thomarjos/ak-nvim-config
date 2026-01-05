@@ -3,7 +3,10 @@ return {
     version = "*",
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons",
+        {
+            "nvim-tree/nvim-web-devicons",
+            enable = vim.g.have_nerd_font,
+        },
         "MunifTanjim/nui.nvim",
     },
     lazy = false,
