@@ -1,0 +1,9 @@
+# Neovim temp files
+*.swp
+*.swo
+undo/
+shada/
+
+# Plugin manager folder
+/lazy-lock.json
+

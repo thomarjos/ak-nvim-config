@@ -1,0 +1,22 @@
+return {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+        local ts = require("nvim-treesitter")
+
+        ts.install({
+            "bash",
+            "powershell",
+            "c",
+            "diff",
+            "html",
+            "lua",
+            "luadoc",
+            "markdown",
+            "markdown_inline",
+            "query",
+            "vim",
+            "vimdoc",
+        })
+    end,
+}
