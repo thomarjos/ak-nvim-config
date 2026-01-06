@@ -9,6 +9,7 @@ return {
             "powershell",
             "c",
             "c_sharp",
+            "java",
             "cmake",
             "diff",
             "html",
@@ -19,6 +20,9 @@ return {
             "query",
             "vim",
             "vimdoc",
+            "javascript",
+            "typescript",
+            "tsx",
         })
     end,
 }
