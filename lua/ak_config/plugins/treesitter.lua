@@ -9,6 +9,7 @@ return {
             "powershell",
             "c",
             "c_sharp",
+            "cmake",
             "diff",
             "html",
             "lua",

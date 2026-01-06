@@ -116,6 +116,7 @@ return {
                     organize_imports_on_format = true,
                 },
             },
+            neocmake = {},
         }
 
         local ensure_installed = vim.tbl_keys(servers or {})
