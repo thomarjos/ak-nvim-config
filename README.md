@@ -1,3 +1,3 @@
 # AK-nvim-config
 
-This is my personal Neovim configuration. Not for public consumption. But I am not stopping anyone from using it as a template either.
+This is my personal Neovim configuration. This is based off of `kickstart.nvim`. I just made it verbose, descriptive and with a whole lot of files.

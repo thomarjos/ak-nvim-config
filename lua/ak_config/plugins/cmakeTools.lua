@@ -10,7 +10,7 @@ return {
             cmake_command = "cmake", -- this is used to specify cmake command path
             ctest_command = "ctest", -- this is used to specify ctest command path
             cmake_use_preset = true,
-            cmake_regenerate_on_save = true, -- auto generate when save CMakeLists.txt
+            cmake_regenerate_on_save = false, -- auto generate when save CMakeLists.txt
             cmake_generate_options = { "-DCMAKE_EXPORT_COMPILE_COMMANDS=1" }, -- this will be passed when invoke `CMakeGenerate`
             cmake_build_options = {}, -- this will be passed when invoke `CMakeBuild`
             -- support macro expansion:
@@ -149,5 +149,14 @@ return {
             cmake_virtual_text_support = true, -- Show the target related to current file using virtual text (at right corner)
             cmake_use_scratch_buffer = false, -- A buffer that shows what cmake-tools has done
         })
+
+        local map = vim.keymap.set
+        map("n", "<leader>cb", ":CMakeBuild<CR>", { desc = "CMake: Build" })
+        map("n", "<leader>cg", ":CMakeGenerate<CR>", { desc = "CMake: Generate/Configure" })
+        map("n", "<leader>cr", ":CMakeRun<CR>", { desc = "CMake: Run" })
+        -- map("n", "<leader>cd", ":CMakeDebug<CR>", { desc = "CMake: Debug" }) -- Required DAP
+        map("n", "<leader>cs", ":CMakeSelectBuildTarget<CR>", { desc = "CMake: Select Target" })
+        map("n", "<leader>ct", ":CMakeSelectBuildType<CR>", { desc = "CMake: Select Build Type" })
+        map("n", "<leader>ck", ":CMakeClean<CR>", { desc = "CMake: Clean" })
     end,
 }
