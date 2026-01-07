@@ -34,3 +34,8 @@ vim.o.inccommand = "split"
 vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
+
+-- To disable full folding
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true

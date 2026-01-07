@@ -11,7 +11,7 @@ return {
             ctest_command = "ctest", -- this is used to specify ctest command path
             cmake_use_preset = true,
             cmake_regenerate_on_save = false, -- auto generate when save CMakeLists.txt
-            cmake_generate_options = { "-DCMAKE_EXPORT_COMPILE_COMMANDS=1" }, -- this will be passed when invoke `CMakeGenerate`
+            cmake_generate_options = { "-DCMAKE_EXPORT_COMPILE_COMMANDS=1", "-GNinja" }, -- this will be passed when invoke `CMakeGenerate`
             cmake_build_options = {}, -- this will be passed when invoke `CMakeBuild`
             -- support macro expansion:
             --       ${kit}

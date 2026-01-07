@@ -23,6 +23,8 @@ return {
             "javascript",
             "typescript",
             "tsx",
+            "json",
+            "jsonc",
         }
 
         vim.defer_fn(function()

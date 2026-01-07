@@ -32,6 +32,7 @@ return {
             lua = { "stylua" },
             cs = { "csharpier" },
             javascript = { "prettier" },
+            json = { "prettier" },
             typescript = { "prettier" },
             typescriptreact = { "prettier" },
         },
