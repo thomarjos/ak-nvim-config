@@ -10,6 +10,7 @@ return {
             "c",
             "c_sharp",
             "java",
+            "python",
             "cmake",
             "diff",
             "html",
@@ -24,7 +25,7 @@ return {
             "typescript",
             "tsx",
             "json",
-            "jsonc",
+            -- "jsonc",
         }
 
         vim.defer_fn(function()

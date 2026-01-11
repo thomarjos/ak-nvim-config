@@ -35,6 +35,7 @@ return {
             json = { "prettier" },
             typescript = { "prettier" },
             typescriptreact = { "prettier" },
+            python = { "ruff" },
         },
     },
 }

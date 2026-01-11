@@ -46,7 +46,9 @@ return {
             },
             cmake_executor = { -- executor to use
                 name = "quickfix", -- name of the executor
-                opts = {}, -- the options the executor will get, possible values depend on the executor type. See `default_opts` for possible values.
+                opts = {
+                    auto_close_when_success = false,
+                }, -- the options the executor will get, possible values depend on the executor type. See `default_opts` for possible values.
                 default_opts = { -- a list of default and possible values for executors
                     quickfix = {
                         show = "always", -- "always", "only_on_error"
@@ -102,7 +104,7 @@ return {
                         position = "belowright", -- "bottom", "top"
                         size = 10,
                         encoding = "utf-8",
-                        auto_close_when_success = true, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
+                        auto_close_when_success = false, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
                     },
                     toggleterm = {
                         direction = "float", -- 'vertical' | 'horizontal' | 'tab' | 'float'
@@ -147,7 +149,7 @@ return {
                 refresh_rate_ms = 100, -- how often to iterate icons
             },
             cmake_virtual_text_support = true, -- Show the target related to current file using virtual text (at right corner)
-            cmake_use_scratch_buffer = false, -- A buffer that shows what cmake-tools has done
+            cmake_use_scratch_buffer = true, -- A buffer that shows what cmake-tools has done
         })
 
         local map = vim.keymap.set
@@ -158,5 +160,6 @@ return {
         map("n", "<leader>cs", ":CMakeSelectBuildTarget<CR>", { desc = "CMake: Select Target" })
         map("n", "<leader>ct", ":CMakeSelectBuildType<CR>", { desc = "CMake: Select Build Type" })
         map("n", "<leader>ck", ":CMakeClean<CR>", { desc = "CMake: Clean" })
+        map("n", "<leader>co", ":copen<CR>", { desc = "CMake: Open Output {Quickfix}" })
     end,
 }

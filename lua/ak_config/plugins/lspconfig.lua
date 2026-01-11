@@ -121,6 +121,7 @@ return {
             eslint = {},
             jdtls = {},
             jsonls = {},
+            pyright = {},
         }
 
         local ensure_installed = vim.tbl_keys(servers or {})
@@ -128,6 +129,7 @@ return {
             "stylua",
             "csharpier",
             "prettier",
+            "ruff",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -143,6 +145,15 @@ return {
             },
         })
 
+        vim.lsp.config["clangd"] = {
+            capabilities = capabilities,
+            cmd = {
+                "clangd",
+                "--background-index",
+                "--clang-tidy",
+                "--header-insertion=never",
+            },
+        }
         vim.lsp.enable("clangd")
     end,
 }
