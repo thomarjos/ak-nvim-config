@@ -3,10 +3,10 @@ vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 
-require("ak_config.core.options")
-require("ak_config.core.keymaps")
+require("akConfig.core.options")
+require("akConfig.core.keymaps")
 
-require("ak_config.core.autocmds")
+require("akConfig.core.autocmds")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -20,7 +20,12 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
-require("lazy").setup("ak_config.plugins", {
+local plugins = {
+    { import = "akConfig.plugins" },
+    { import = "akConfig.colorschemes" },
+}
+
+require("lazy").setup(plugins, {
     ui = {
         icons = vim.g.have_nerd_font and {} or {
             cmd = "⌘",
@@ -39,3 +44,5 @@ require("lazy").setup("ak_config.plugins", {
         },
     },
 })
+
+vim.cmd.colorscheme("tokyonight")
