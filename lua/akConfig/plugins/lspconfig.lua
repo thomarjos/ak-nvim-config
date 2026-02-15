@@ -98,6 +98,13 @@ return {
 
         local capabilities = require("blink.cmp").get_lsp_capabilities()
 
+        require("mason").setup({
+            registries = {
+                "github:mason-org/mason-registry",
+                "github:Crashdummyy/mason-registry",
+            },
+        })
+
         local servers = {
             powershell_es = {},
             lua_ls = {
@@ -107,13 +114,6 @@ return {
                             callSnippet = "Replace",
                         },
                     },
-                },
-            },
-            omnisharp = {
-                settings = {
-                    enable_editorconfig_support = true,
-                    enable_import_completion = true,
-                    organize_imports_on_format = true,
                 },
             },
             neocmake = {},
@@ -155,5 +155,19 @@ return {
             },
         }
         vim.lsp.enable("clangd")
+
+        vim.lsp.config("roslyn", {
+            capabilities = capabilities,
+            settings = {
+                ["csharp|inlay_hints"] = {
+                    csharp_enable_inlay_hints_for_implicit_object_creation = true,
+                    csharp_enable_inlay_hints_for_implicit_variable_types = true,
+                },
+                ["csharp|code_lens"] = {
+                    dotnet_enable_reference_code_lens = true,
+                },
+            },
+        })
+        vim.lsp.enable("roslyn")
     end,
 }
